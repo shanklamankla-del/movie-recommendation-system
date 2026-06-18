@@ -17,7 +17,7 @@ def build_similarity_matrix(data):
 def recommend_movies(movie_title, data, similarity, number_of_recommendations=5):
     movie_title = movie_title.lower()
 
-    matching_movies = data[data["title"].str.lower() == movie_title]
+    matching_movies = data[data["title"].str.lower().str.contains(movie_title, na=False)]
 
     if matching_movies.empty:
         print(f"Movie '{movie_title}' was not found.")
