@@ -4,27 +4,17 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 
 def load_cleaned_data(file_path):
-    """
-    Loads the cleaned movie dataset.
-    """
     return pd.read_csv(file_path)
 
 
 def build_similarity_matrix(data):
-    """
-    Converts movie tags into numbers and calculates similarity between movies.
-    """
     vectorizer = CountVectorizer(max_features=5000, stop_words="english")
     vectors = vectorizer.fit_transform(data["tags"]).toarray()
-
     similarity = cosine_similarity(vectors)
     return similarity
 
 
 def recommend_movies(movie_title, data, similarity, number_of_recommendations=5):
-    """
-    Recommends movies similar to the given movie title.
-    """
     movie_title = movie_title.lower()
 
     matching_movies = data[data["title"].str.lower() == movie_title]
@@ -40,12 +30,14 @@ def recommend_movies(movie_title, data, similarity, number_of_recommendations=5)
 
     print(f"\nMovies similar to {data.iloc[movie_index]['title']}:\n")
 
-    for i in movies_sorted[1:number_of_recommendations + 1]:
-        print(data.iloc[i[0]]["title"])
+    for movie in movies_sorted[1:number_of_recommendations + 1]:
+        recommended_movie_index = movie[0]
+        recommended_movie_title = data.iloc[recommended_movie_index]["title"]
+        print(recommended_movie_title)
 
 
 if __name__ == "__main__":
     data = load_cleaned_data("data/processed/cleaned_movies.csv")
     similarity = build_similarity_matrix(data)
 
-    recommend_movies("Iron Man", data, similarity)
+    recommend_movies("Avatar", data, similarity)
