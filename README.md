@@ -9,6 +9,15 @@ Before running the project, install the dependencies listed in `requirements.txt
 ```bash
 pip install -r requirements.txt
 
+## Streamlit Web App
+
+This project also includes a Streamlit web app that allows users to enter a movie title and receive movie recommendations through an interactive interface.
+
+Run the app with:
+
+```bash
+streamlit run src/streamlit_app.py
+
 ## Example Output
 
 When the user enters:
