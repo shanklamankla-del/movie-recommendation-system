@@ -8,3 +8,10 @@ Before running the project, install the dependencies listed in `requirements.txt
 
 ```bash
 pip install -r requirements.txt
+
+## Example Output
+
+When the user enters:
+
+```text
+Avatar
