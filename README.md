@@ -1,34 +1,31 @@
-# movie-recommendation-system
-Build a basic movie recommendation system using a movie dataset
+# Movie Recommendation System
+
+## Project Overview
+
+This project is a basic movie recommendation system built with Python. It uses the TMDB movie dataset to recommend similar movies based on movie metadata such as genres, keywords, cast, director, and overview text.
+
+## Tools Used
+
+- Python
+- pandas
+- scikit-learn
+- Streamlit
+- Git/GitHub
+
+## Dataset
+
+This project uses the TMDB 5000 Movie Dataset.
+
+The dataset files used are:
+
+- `tmdb_5000_movies.csv`
+- `tmdb_5000_credits.csv`
+
 ## How to Run This Project
 
-### Install the required packages
+### 1. Install the required packages
 
 Before running the project, install the dependencies listed in `requirements.txt`.
 
 ```bash
 pip install -r requirements.txt
-
-## Streamlit Web App
-
-This project also includes a Streamlit web app that allows users to enter a movie title and receive movie recommendations through an interactive interface.
-
-Run the app with:
-
-```bash
-streamlit run src/streamlit_app.py
-
-## Example Output
-
-When the user enters:
-
-```text
-Avatar
-
-## What I Learned
-
-- How to clean and combine multiple CSV files
-- How to process text data for recommendations
-- How to use CountVectorizer to convert text into numerical features
-- How cosine similarity can compare movies based on metadata
-- How to build a simple command-line app in Python
